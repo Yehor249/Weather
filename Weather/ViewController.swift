@@ -20,8 +20,10 @@ class ViewController: UIViewController {
     @objc func didTapGetWaetherButton() {
         
         // в ссылке сделлать интерполяцию
-        
-        let urlString = "https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current_weather=true"
+        let latitude = 52.52
+        let longitude = 13.41
+
+        let urlString = "https://api.open-meteo.com/v1/forecast?latitude=\(latitude)&longitude=\(longitude)&current_weather=true"
         let url = URL(string: urlString)!
         let request = URLRequest(url: url)
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
